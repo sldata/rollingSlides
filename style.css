@@ -57,13 +57,13 @@ body {
 	cursor: pointer;
 }
 
-.card::after{
+.card::after {
 	content: '';
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
-	transition: opacotu .6s;
+	transition: opacotu 0.6s;
 }
 
 .spring {
@@ -88,25 +88,25 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	opacity: .5;
+	opacity: 0.5;
 	content: '';
 }
-.spring::before{
+.spring::before {
 	background-color: var(--spring-color);
 }
 
-.summer::before{
+.summer::before {
 	background-color: var(--summer-color);
 }
 
-.autumn::before{
+.autumn::before {
 	background-color: var(--autumn-color);
 }
-.winter::before{
+.winter::before {
 	background-color: var(--winter-color);
 }
 
-.text{
+.text {
 	position: absolute;
 	left: 50%;
 	bottom: 10%;
@@ -118,7 +118,7 @@ body {
 	z-index: 5;
 }
 
-.text h2{
+.text h2 {
 	text-transform: uppercase;
 	transform: rotate(-90deg);
 }
@@ -129,34 +129,33 @@ body {
 	font-size: 1.6rem;
 }
 
-.active{
+.active {
 	flex-grow: 8;
 }
 
-.active .text{
-	animation: show-bg 1s .6s forwards;
+.active .text {
+	animation: show-bg 1s 0.6s forwards;
 }
 
-.active .text h2{
+.active .text h2 {
 	display: none;
-	
 }
-.active .text p{
+.active .text p {
 	display: block;
-	animation: show-text 1s .2s forwards;
+	animation: show-text 1s 0.2s forwards;
 }
 
-.card.active::after{
+.card.active::after {
 	opacity: 0;
 }
-@keyframes show-bg{
-	to{
+@keyframes show-bg {
+	to {
 		background-color: rgba(0, 0, 0, 0.4);
 	}
 }
 
-@keyframes show-text{
-	to{
+@keyframes show-text {
+	to {
 		opacity: 1;
 	}
 }
