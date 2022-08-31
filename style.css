@@ -37,7 +37,7 @@ body {
 
 .wrapper {
 	display: flex;
-	padding: 5em;
+	padding: 0.5em;
 	width: 1200px;
 	background-color: #fff;
 	border-radius: 10px;
@@ -55,6 +55,15 @@ body {
 	transition: flex-grow 0.8s;
 	overflow: hidden;
 	cursor: pointer;
+}
+
+.card::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	transition: opacotu .6s;
 }
 
 .spring {
@@ -95,4 +104,59 @@ body {
 }
 .winter::before{
 	background-color: var(--winter-color);
+}
+
+.text{
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	transform: translateX(-50%);
+	width: 80%;
+	padding: 2em;
+	color: #fff;
+	border-radius: 6px;
+	z-index: 5;
+}
+
+.text h2{
+	text-transform: uppercase;
+	transform: rotate(-90deg);
+}
+
+.text p {
+	display: none;
+	opacity: 0;
+	font-size: 1.6rem;
+}
+
+.active{
+	flex-grow: 8;
+}
+
+.active .text{
+	animation: show-bg 1s .6s forwards;
+}
+
+.active .text h2{
+	display: none;
+	
+}
+.active .text p{
+	display: block;
+	animation: show-text 1s .2s forwards;
+}
+
+.card.active::after{
+	opacity: 0;
+}
+@keyframes show-bg{
+	to{
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+}
+
+@keyframes show-text{
+	to{
+		opacity: 1;
+	}
 }
